@@ -86,7 +86,7 @@ public class UsuarioServicio {
 	}
 
 	public void ordenarXnombre () {
-		Collections.sort(repositorio.getUsuarios()); 
+		Collections.sort(repositorio.getUsuarios(),new Usuario()); 
 		for (Usuario u : repositorio.getUsuarios()) {
 			logger.info(u);
 		}
@@ -99,10 +99,10 @@ public class UsuarioServicio {
 		return usuariosRol;
 	}
 	
-	public List<Usuario> filtroXTipoSuscripcion (TipoPlan plan,int numLibros) {
+	public List<Usuario> filtroXTipoSuscripcion (TipoPlan plan) {
 		List<Usuario> usuarios = new ArrayList<>();
 		for (Usuario u : repositorio.getUsuarios()) {
-			if (u.getSuscripcion().getTipoPlan().equals(plan) && u.getLibros().size() == numLibros){
+			if (u.getSuscripcion().getTipoPlan().equals(plan)){
 				usuarios.add(u);
 			}
 			}

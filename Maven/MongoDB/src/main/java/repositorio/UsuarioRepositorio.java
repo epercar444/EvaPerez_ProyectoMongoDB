@@ -99,8 +99,17 @@ public class UsuarioRepositorio {
 				List<Usuario> usuarios = new ArrayList<>();
 				FindIterable<Document> documentos = coleccion.find();
 				for (Document doc : documentos) {
-				       Usuario u = documentToUser(doc);
-				       usuarios.add(u);
+				       List<Libro> listaL = documentToLibros(doc);
+					
+						Usuario u = new Usuario();
+						u.setSuscripcion(documentToSuscripcion(doc));
+						u.setLibros(listaL);
+						u.setId(doc.getInteger("id", 0));
+						u.setNombreUsuario(doc.getString("nombreUsuario"));
+						u.setEmail(doc.getString("email"));
+						u.setRol(RolUsuario.valueOf(doc.getString("rol")));
+						u.setCuenta_verificada(doc.getBoolean("cuenta_verificada"));
+						usuarios.add(u);
 				}
 				return usuarios;
 		}

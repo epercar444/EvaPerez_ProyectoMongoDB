@@ -88,7 +88,7 @@ public class GestionaUsuarios {
 		}*/
 		
 		
-		//ORDENAR POR ID Y NOMBRE(Repositorio,Ascendente)
+		//ORDENAR POR ID (Repositorio,Ascendente)
 		/*List<Usuario> usuarios1 = servicio.ordenarXides();
 		for (Usuario u : usuarios1) {
 			logger.info(u);
@@ -107,7 +107,7 @@ public class GestionaUsuarios {
 		
 		
 		//FILTRO POR TIPO DE PLAN EN SUSCRIPCIÓN (Servicio)
-		/*List<Usuario> usuariosTipoSuscripcion = servicio.filtroXTipoSuscripcion(TipoPlan.PREMIUM_ANUAL,1);
+		/*List<Usuario> usuariosTipoSuscripcion = servicio.filtroXTipoSuscripcion(TipoPlan.PREMIUM_ANUAL);
 		for (Usuario u : usuariosTipoSuscripcion) {
 			logger.info(u);
 		}*/
